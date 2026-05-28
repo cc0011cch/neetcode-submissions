@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int findMin(vector<int> &nums) {
+        int l{0},r{static_cast<int>(nums.size())-1};
+        int res{nums[0]};
+        while (l<r){
+            int mid = (r+l)/2;
+            if (nums[mid] > nums[r]) l=mid+1;
+            else r=mid;
+        }
+        return nums[l];
+    }
+};
